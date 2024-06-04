@@ -1,0 +1,27 @@
+---
+
+- hosts: docker # Gruppenname aus dem inventory.yaml
+  become: true # Ausführen mit sudo Berechtigung (privilege escalation)
+  tasks:
+    - name: Add Docker keyring
+      ansible.builtin.get_url:
+        url: 'https://download.docker.com/linux/ubuntu/gpg'
+        dest: '/etc/apt/keyrings/docker.asc'
+        mode: 'a+r'
+
+    - name: Add Docker repo
+      ansible.builtin.apt_repository:
+        repo: deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu jammy stable
+        state: present
+        filename: docker.list
+        update-cache: true
+
+    - name: Install Docker packages
+      ansible.builtin.apt:
+        name:
+          - docker-ce 
+          - docker-ce-cli
+          - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+        state: present
