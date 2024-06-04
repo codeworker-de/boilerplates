@@ -15,6 +15,7 @@ Um mit Packer und diesem Repo starten zu können, werden einige Tools benötigt:
 * [Packer](https://www.packer.io/)
 * [Vagrant](https://www.vagrantup.com/)
 * [VirtualBox](https://www.virtualbox.org/)
+* Access-Token zu deinem Proxmox Clusters
 
 Mit diesem Setup seid ihr in der Lage ein Ubuntu Server Image mit Packer als Vagrant box für VirtualBox zu erzeugen.
 Als weitere Möglichkeit könnt ihr auch ein Image bzw. ein Template für Proxmox erstellen. Dafür wird jedoch ein Proxmox-Cluster benötigt. Da die VM innerhalb des Proxmox-Clusters erstellt und die Konfigurationen dort durchgeführt werden. Am Ende wird dann ein Proxmox-Template erstellt von dem man dann Klone erzeugen kann.

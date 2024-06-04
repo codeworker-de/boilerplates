@@ -1,3 +1,11 @@
+**/.vscode
+**/.DS_Store
+
 ./packer/**/vagrant/
 ./packer/**/output-*
 ./packer/**/*.box
+
+**/.terraform
+**/.terraform.lock.hcl
+**/terraform.tfstate*
+
