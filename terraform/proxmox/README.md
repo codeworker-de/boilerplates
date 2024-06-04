@@ -60,6 +60,6 @@ Werden die VMs bzw. wird die VM nicht mehr benötigt, dann können wir diese auc
 
 Dazu folgenden Befehl absetzen:
 
-``bash
+```bash
 terraform destroy
 ```
