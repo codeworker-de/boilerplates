@@ -1,0 +1,32 @@
+#cloud-config
+autoinstall:
+  version: 1
+  locale: en_US
+  keyboard:
+    layout: de
+  ssh:
+    install-server: true
+    allow-pw: true
+  packages:
+    - sudo
+    - qemu-guest-agent
+  storage:
+    layout:
+      name: direct
+    swap:
+      size: 0
+  user-data:
+    timezone: Europe/Berlin
+    users:
+      - name: codeworker
+        groups: [adm, sudo]
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        lock_passwd: false
+        passwd: $6$3ce/tFGUWLlJ6YT.$IWJbYfT5KOxWi6xD1fgyngMYUMYIW1uU43VvreE9qitMhbOQsVJ7OFE7BeLN/BhaaQV9Mveo5B9BGWVQ8D7841
+
+      - name: codi
+        groups: [adm, sudo]
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        lock_passwd: true
+        ssh_authorized_keys:
+          - SSH_KEY_EINFUEGEN
