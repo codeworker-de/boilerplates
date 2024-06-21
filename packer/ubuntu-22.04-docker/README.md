@@ -1,4 +1,4 @@
-# Ubuntu Server Image mit Packer
+# Ubuntu Server Image (inkl. Docker) mit Packer
 
 Dies ist ein Demo Projekt, in dem ein Ubuntu Server Image mit Packer erstellt werden kann.
 Es dient zum Zweck des erlernens von Packer. Daher sind die in diesem enthaltenen Dateien ausschließlich für eigene Tests und zum erweitern seiner eigenen Kenntnisse gedacht.
@@ -9,6 +9,16 @@ Packer ist in erster Linie ein commandline Tool aus dem Haus HashiCorp. HashiCor
 Mit Packer können für verschiedene Ziel-Plattformen Betriebssystem Images erzeugt werden.
 Dazu sind nur einige wenige Konfigurationsdateien notwendig.
 In diesem Repository befindet sich eine *.pkr.hcl-Datei, diese enthält die für Packer notwendigen Konfigurationen.
+
+## Was ist Docker?
+Docker ist ein Commandline-Tool zum Ausführen und Managen von Containern. Ein Container ermöglicht es Software quasi darin zu "verpacken" und diese dann innerhalb eines Containers auszuführen.
+Werden die Container in einer Linux-Umgebung ausgeführt, dann spiegelt jeder laufende Container einen eigenen Prozess wider.
+Container können nützlich sein, um eine gewisse Kapselung von einer Software und dem Betriebssystem zu erreichen. Dies fördert das "schnelle" Aktualisieren einer Software.
+
+## Was ist Docker nicht?
+Oftmals werden Container mit einer virtuellen Maschine gleich gestellt. Was jedoch falsch ist!
+Da sich ein Container den Kernel mit dem darunter liegenden Betriebssystem teilt, muss somit ein Kernel bereitgestellt werden.
+Diese sind *nicht* Teil eines Containers und müssen somit von einem Betriebssystem geliefert werden.
 
 ## System requirements
 Um mit Packer und diesem Repo starten zu können, werden einige Tools benötigt:
